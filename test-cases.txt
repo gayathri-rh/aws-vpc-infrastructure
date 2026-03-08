@@ -1,0 +1,74 @@
+# Test Cases
+
+## Test Case 1: Bastion SSH Access
+
+**Objective**
+Verify that Bastion Host allows secure SSH access.
+
+**Steps**
+1. Connect from local machine to Bastion using SSH
+2. Authenticate using key pair
+
+**Expected Result**
+Successful login to Bastion host.
+
+
+---
+
+## Test Case 2: Bastion to Private EC2 SSH
+
+**Objective**
+Verify private EC2 is accessible only through Bastion.
+
+**Steps**
+1. SSH into Bastion host
+2. SSH from Bastion to private EC2
+
+**Expected Result**
+Successful connection to private EC2.
+
+
+---
+
+## Test Case 3: Nginx Service Running
+
+**Objective**
+Verify Nginx web server is running on private EC2.
+
+**Command**
+
+curl localhost
+
+**Expected Result**
+HTML page returned.
+
+
+---
+
+## Test Case 4: Load Balancer Routing
+
+**Objective**
+Verify ALB forwards requests to private EC2.
+
+**Steps**
+1. Open ALB DNS in browser
+2. Send HTTP request
+
+**Expected Result**
+Browser displays:
+
+Hello! VPC with AWS is working as expected.
+
+
+---
+
+## Test Case 5: Security Validation
+
+**Objective**
+Ensure private EC2 is not directly accessible.
+
+**Steps**
+1. Attempt direct connection to private IP from outside
+
+**Expected Result**
+Connection fails.
